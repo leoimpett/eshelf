@@ -1,0 +1,376 @@
+
+<html>
+   <head>
+      <script type = "text/javascript" src = "https://d3js.org/d3.v4.min.js"></script>
+       
+    <link rel="stylesheet" href="main.css">
+   </head>
+
+   <body>
+       
+      <svg height=0>
+          
+        <defs>
+          <pattern id="Zigzags" x="0" y="0"  width="40px" height="12px"  patternUnits="userSpaceOnUse">
+            <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                <g id="zig-zag" fill="#694C43">
+                    <path d="M2.84217094e-14,6.17157288 L6.17157288,0 L11.8284271,0 L0,11.8284271 L2.84217094e-14,6.17157288 L2.84217094e-14,6.17157288 Z M40,11.8284271 L28.1715729,0 L33.8284271,3.55271368e-15 L40,6.17157288 L40,11.8284271 L40,11.8284271 Z M6.17157288,12 L18.1715729,0 L21.8284271,0 L33.8284271,12 L28.1715729,12 L20,3.82842712 L11.8284271,12 L6.17157288,12 L6.17157288,12 Z M18.1715729,12 L20,10.1715729 L21.8284271,12 L18.1715729,12 L18.1715729,12 Z" id="Combined-Shape"></path>
+                </g>
+            </g>
+          </pattern>
+          <pattern id="Clouds" x="0" y="0"  width="40px" height="12px"  patternUnits="userSpaceOnUse">
+            <path fill="#D1B58D" d="M56 26v2h-7.75c2.3-1.27 4.94-2 7.75-2zm-26 2a2 2 0 1 0-4 0h-4.09A25.98 25.98 0 0 0 0 16v-2c.67 0 1.34.02 2 .07V14a2 2 0 0 0-2-2v-2a4 4 0 0 1 3.98 3.6 28.09 28.09 0 0 1 2.8-3.86A8 8 0 0 0 0 6V4a9.99 9.99 0 0 1 8.17 4.23c.94-.95 1.96-1.83 3.03-2.63A13.98 13.98 0 0 0 0 0h7.75c2 1.1 3.73 2.63 5.1 4.45 1.12-.72 2.3-1.37 3.53-1.93A20.1 20.1 0 0 0 14.28 0h2.7c.45.56.88 1.14 1.29 1.74 1.3-.48 2.63-.87 4-1.15-.11-.2-.23-.4-.36-.59H26v.07a28.4 28.4 0 0 1 4 0V0h4.09l-.37.59c1.38.28 2.72.67 4.01 1.15.4-.6.84-1.18 1.3-1.74h2.69a20.1 20.1 0 0 0-2.1 2.52c1.23.56 2.41 1.2 3.54 1.93A16.08 16.08 0 0 1 48.25 0H56c-4.58 0-8.65 2.2-11.2 5.6 1.07.8 2.09 1.68 3.03 2.63A9.99 9.99 0 0 1 56 4v2a8 8 0 0 0-6.77 3.74c1.03 1.2 1.97 2.5 2.79 3.86A4 4 0 0 1 56 10v2a2 2 0 0 0-2 2.07 28.4 28.4 0 0 1 2-.07v2c-9.2 0-17.3 4.78-21.91 12H30zM7.75 28H0v-2c2.81 0 5.46.73 7.75 2zM56 20v2c-5.6 0-10.65 2.3-14.28 6h-2.7c4.04-4.89 10.15-8 16.98-8zm-39.03 8h-2.69C10.65 24.3 5.6 22 0 22v-2c6.83 0 12.94 3.11 16.97 8zm15.01-.4a28.09 28.09 0 0 1 2.8-3.86 8 8 0 0 0-13.55 0c1.03 1.2 1.97 2.5 2.79 3.86a4 4 0 0 1 7.96 0zm14.29-11.86c1.3-.48 2.63-.87 4-1.15a25.99 25.99 0 0 0-44.55 0c1.38.28 2.72.67 4.01 1.15a21.98 21.98 0 0 1 36.54 0zm-5.43 2.71c1.13-.72 2.3-1.37 3.54-1.93a19.98 19.98 0 0 0-32.76 0c1.23.56 2.41 1.2 3.54 1.93a15.98 15.98 0 0 1 25.68 0zm-4.67 3.78c.94-.95 1.96-1.83 3.03-2.63a13.98 13.98 0 0 0-22.4 0c1.07.8 2.09 1.68 3.03 2.63a9.99 9.99 0 0 1 16.34 0z"></path>
+          </pattern>
+            
+            
+          <pattern id="Cocchi" x="0" y="0"  width="10px" height="12px"  patternUnits="userSpaceOnUse">
+            <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                <g id="eyes" fill="#7fd2f7">
+                    <path d="M6,12 C6,11.3784524 5.90549098,10.7789786 5.73005951,10.2151652 C6.81793291,11.3170865 8.32921496,12 10,12 C11.670785,12 13.1820671,11.3170865 14.2699405,10.2151652 C14.094509,10.7789786 14,11.3784524 14,12 L16,12 C16,9.790861 17.790861,8 20,8 L20,6 C18.329215,6 16.8179329,6.68291349 15.7300595,7.78483481 C15.905491,7.22102135 16,6.62154756 16,6 C16,5.37845244 15.905491,4.77897865 15.7300595,4.21516519 C16.8179329,5.31708651 18.329215,6 20,6 L20,4 C17.790861,4 16,2.209139 16,0 L14,0 C14,0.621547559 14.094509,1.22102135 14.2699405,1.78483481 C13.1820671,0.682913489 11.670785,0 10,0 C8.32921496,0 6.81793291,0.682913489 5.73005951,1.78483481 C5.90549098,1.22102135 6,0.621547559 6,0 L4,0 C4,2.209139 2.209139,4 0,4 L0,6 C1.67078504,6 3.18206709,6.68291349 4.26994049,7.78483481 C4.09450902,7.22102135 4,6.62154756 4,6 C4,5.37845244 4.09450902,4.77897865 4.26994049,4.21516519 C3.18206709,5.31708651 1.67078504,6 0,6 L0,8 C2.209139,8 4,9.790861 4,12 L6,12 L6,12 Z M2,12 C2,10.8954305 1.1045695,10 0,10 L0,12 L2,12 L2,12 Z M18,12 C18,10.8954305 18.8954305,10 20,10 L20,12 L18,12 L18,12 Z M0,2 C1.1045695,2 2,1.1045695 2,0 L0,0 L0,2 L0,2 Z M20,2 C18.8954305,2 18,1.1045695 18,0 L20,0 L20,2 L20,2 Z M10,10 C12.209139,10 14,8.209139 14,6 C14,3.790861 12.209139,2 10,2 C7.790861,2 6,3.790861 6,6 C6,8.209139 7.790861,10 10,10 L10,10 Z M10,8 C11.1045695,8 12,7.1045695 12,6 C12,4.8954305 11.1045695,4 10,4 C8.8954305,4 8,4.8954305 8,6 C8,7.1045695 8.8954305,8 10,8 L10,8 Z" id="Combined-Shape"></path>
+                </g>
+            </g>
+          </pattern>
+          
+        </defs>
+    
+<!--        <rect fill="url(#Pattern)" stroke="none" width="150" height="50" x="50" y="150"/>-->
+          
+          
+<!--
+         <g transform = "translate(60,60) rotate(30)">
+            <rect x = "20" 
+               y = "20" 
+               width = "60" 
+               height = "30" 
+               fill = "green">
+            </rect>
+             
+            <circle cx = "0" 
+               cy = "0" 
+               r = "30" 
+               fill = "red"/>
+         </g>
+-->
+
+<div id="container"></div>
+          
+          
+<script>
+    
+    
+let yTrack = 200;
+let bookWidth = 200;
+let bookHeight = 600;
+//let xPos = 50;
+    
+    
+//    Container 
+const plot = d3.select(container)
+.insert("svg")
+.attr('width', 2000)
+.attr('height', 2000);
+
+
+function plotBook1(xPos, bookWidth,bookHeight, bookTitle, authorName, plot){
+    //    Book Rectangle
+    plot.append('rect')
+      .attr("x", xPos)
+      .attr("y", 9.5)
+      .attr("width", bookWidth)
+      .attr("height", bookHeight)
+      .attr("rx",3)
+      .style('fill', "#163244");
+
+
+    plot.append('path')
+        .attr("d","M" + xPos + ",10 C" + (xPos + 0.25*bookWidth).toString() + ",0 " + (xPos + 0.75*bookWidth).toString() + ",0 " + (xPos + 1*bookWidth).toString()+ ",10")
+      .style('fill', "#163244");
+
+    plot.append('rect')
+      .attr("x", xPos)
+      .attr("y", 0.05*bookHeight)
+      .attr("width", bookWidth)
+      .attr("height", 35)
+      .style('fill', "url(#Clouds)");
+
+    plot.append('rect')
+      .attr("x", xPos)
+      .attr("y", 0.95*bookHeight)
+      .attr("width", bookWidth)
+      .attr("height", 35)
+      .style('fill', "url(#Clouds)");
+
+    plot.append("text")
+      .attr("x", bookWidth*0.5 + xPos)
+      .attr("y", bookHeight*0.3)
+      .attr("font-size","30")
+      .attr("text-anchor", "middle")
+      .attr("font-family", "garamond")
+      .attr('class','embossText')
+      .style("fill",'#D1B58D')
+      .text(bookTitle)
+      .call(wrap, bookWidth*0.5);
+
+    plot.append("text")
+      .attr("x", bookWidth*0.5 + xPos)
+      .attr("y", bookHeight*0.55)
+      .attr("font-size","25")
+      .attr("text-anchor", "middle")
+      .attr("font-family", "garamond")
+    //  .attr("font-style","italic")
+      .attr("class",'embossText')
+      .style("fill",'#D1B58D')
+      .text(".")
+      .call(wrap, bookWidth*0.5);
+
+    plot.append("text")
+      .attr("x", bookWidth*0.5 + xPos)
+      .attr("y", bookHeight*0.6)
+      .attr("font-size","30")
+      .attr("text-anchor", "middle")
+      .attr("font-family", "garamond")
+    //  .attr("font-style","italic")
+      .attr("class",'embossText')
+      .style("fill",'#D1B58D')
+      .text(authorName)
+      .call(wrap, bookWidth*0.5);
+}
+    
+
+function plotBook2(xPos, bookWidth,bookHeight, bookTitle, authorName, plot){
+    //    Book Rectangle
+    
+    var yoffset = 35;
+    
+    plot.append('rect')
+      .attr("x", xPos)
+      .attr("y", 9.5 + yoffset)
+      .attr("width", bookWidth)
+      .attr("height", bookHeight - yoffset)
+      .attr("rx",3)
+      .style('fill', "#D1B58D");
+
+
+    plot.append('path')
+        .attr("d","M" + xPos + "," + (yoffset+10).toString() + " C" + (xPos + 0.25*bookWidth).toString() + "," + yoffset.toString() + " " + (xPos + 0.75*bookWidth).toString() + "," + yoffset.toString() + " " + (xPos + 1*bookWidth).toString()+ "," + (yoffset+10).toString() + "")
+      .style('fill', "#D1B58D");
+
+    plot.append('rect')
+      .attr("x", xPos)
+      .attr("y", 0.1*bookHeight)
+      .attr("width", bookWidth)
+      .attr("height", 15)
+      .style('fill', "url(#Zigzags)");
+
+    plot.append('rect')
+      .attr("x", xPos)
+      .attr("y", 0.3*bookHeight)
+      .attr("width", bookWidth)
+      .attr("height", 15)
+      .style('fill', "url(#Zigzags)");
+
+    plot.append('rect')
+      .attr("x", xPos)
+      .attr("y", 0.5*bookHeight)
+      .attr("width", bookWidth)
+      .attr("height", 15)
+      .style('fill', "url(#Zigzags)");
+
+    plot.append('rect')
+      .attr("x", xPos)
+      .attr("y", 0.7*bookHeight)
+      .attr("width", bookWidth)
+      .attr("height", 15)
+      .style('fill', "url(#Zigzags)");
+
+    plot.append('rect')
+      .attr("x", xPos)
+      .attr("y", 0.9*bookHeight)
+      .attr("width", bookWidth)
+      .attr("height", 15)
+      .style('fill', "url(#Zigzags)");
+
+    plot.append("text")
+      .attr("x", bookWidth*0.5 + xPos)
+      .attr("y", bookHeight*0.32)
+      .attr("font-size","30")
+      .attr("text-anchor", "middle")
+      .attr("font-family", "garamond")
+      .attr('class','embossText')
+      .style("fill",'#694C43')
+      .text(bookTitle)
+      .call(wrap, bookWidth*0.5);
+
+    plot.append("text")
+      .attr("x", bookWidth*0.5 + xPos)
+      .attr("y", bookHeight*0.70)
+      .attr("font-size","30")
+      .attr("text-anchor", "middle")
+      .attr("font-family", "garamond")
+    //  .attr("font-style","italic")
+      .attr("class",'embossText')
+      .style("fill",'#694C43')
+      .text(authorName)
+      .call(wrap, bookWidth*0.5);
+}
+    
+    
+
+function plotBook3(xPos, bookWidth,bookHeight, bookTitle, authorName, plot){
+    //    Book Rectangle
+    plot.append('rect')
+      .attr("x", xPos)
+      .attr("y", 9.5)
+      .attr("width", bookWidth)
+      .attr("height", bookHeight)
+      .attr("rx",3)
+      .style('fill', "#EBE4DC");
+
+
+    plot.append('path')
+        .attr("d","M" + xPos + ",10 C" + (xPos + 0.25*bookWidth).toString() + ",0 " + (xPos + 0.75*bookWidth).toString() + ",0 " + (xPos + 1*bookWidth).toString()+ ",10")
+      .style('fill', "#EBE4DC");
+
+    plot.append('rect')
+      .attr("x", xPos+5)
+      .attr("y", 0.2*bookHeight)
+      .attr("width", bookWidth-10)
+      .attr("height", 200)
+      .attr("rx",8)
+      .style('fill', "#FFD26E");
+
+    
+    plot.append("text")
+      .attr("x", bookWidth*0.5 + xPos)
+      .attr("y", bookHeight*0.30)
+      .attr("font-size","20")
+      .attr("text-anchor", "middle")
+      .attr("font-family", "times")
+//      .attr('class','embossText')
+      .style("fill",'#694C43')
+      .text(bookTitle)
+      .call(wrap, bookWidth*0.5);
+
+    plot.append("text")
+      .attr("x", bookWidth*0.5 + xPos)
+      .attr("y", bookHeight*0.22)
+      .attr("font-size","20")
+      .attr("text-anchor", "middle")
+      .attr("font-family", "times")
+//      .attr("font-style","italic")
+//      .attr("class",'embossText')
+      .style("fill",'#694C43')
+      .text(authorName)
+      .call(wrap, bookWidth*0.5);
+}
+    
+
+function plotBook4(xPos, bookWidth,bookHeight, bookTitle, authorName, plot){
+    //    Book Rectangle
+    plot.append('rect')
+      .attr("x", xPos)
+      .attr("y", 9.5)
+      .attr("width", bookWidth)
+      .attr("height", bookHeight)
+      .attr("rx",3)
+      .style('fill', "#F0CFB3");
+
+
+    plot.append('path')
+        .attr("d","M" + xPos + ",10 C" + (xPos + 0.25*bookWidth).toString() + ",0 " + (xPos + 0.75*bookWidth).toString() + ",0 " + (xPos + 1*bookWidth).toString()+ ",10")
+      .style('fill', "#F0CFB3");
+
+    plot.append('rect')
+      .attr("x", xPos+5)
+      .attr("y", 0.05*bookHeight)
+      .attr("width", bookWidth-10)
+      .attr("height", 50)
+      .attr("rx",8)
+      .style('fill', "url(#Cocchi)");
+    
+    plot.append('rect')
+      .attr("x", xPos+5)
+      .attr("y", 0.90*bookHeight)
+      .attr("width", bookWidth-10)
+      .attr("height", 50)
+      .attr("rx",8)
+      .style('fill', "url(#Cocchi)");
+
+    plot.append("text")
+      .attr("x", bookWidth*0.5 + xPos + 15)
+      .attr("y", bookHeight*0.4)
+      .attr("font-size","20")
+      .attr("text-anchor", "middle")
+      .attr("font-family", "times")
+    .attr('writing-mode','vertical-rl')
+      .attr("class",'embossText')
+      .style("fill",'#a04059')
+      .text(authorName);
+
+    plot.append("text")
+      .attr("x", bookWidth*0.5 + xPos - 15)
+      .attr("y", bookHeight*0.4)
+      .attr("font-size","20")
+      .attr("text-anchor", "middle")
+      .attr("font-family", "times")
+    .attr('writing-mode','vertical-rl')
+      .attr("class",'embossText')
+      .style("fill",'#a04059')
+      .text(bookTitle);
+}
+        
+    
+plotBook1(80, 150, 600, "Talking to Strangers", "Malcolm Gladwell", plot)
+//plotBook(150)
+plotBook2(240, 150 , bookHeight, "The Institute","Stephen King", plot)
+    
+plotBook3(400, 100 , bookHeight, "Where the Crawdads Sing","Delia Owens", plot)
+
+plotBook1(510, 150, 600, "Ninteen Eighty Four", "George Orwell", plot)
+    
+plotBook4(670, 80, 600, "Bad Feminist", "Roxanne Gay", plot)
+
+plotBook1(760, 150, 600, "Talking to Strangers", "Malcolm Gladwell", plot)
+//plotBook(150)
+plotBook2(920, 150 , bookHeight, "The Institute","Stephen King", plot)
+    
+plotBook3(1080 , 100 , bookHeight, "Where the Crawdads Sing","Delia Owens", plot)
+
+plotBook1(1190, 150, 600, "Ninteen Eighty Four", "George Orwell", plot)
+    
+plotBook4(1350, 80, 600, "Bad Feminist", "Roxanne Gay", plot)
+    
+function wrap(text, width) {
+  text.each(function() {
+    let text = d3.select(this),
+      words = text.text().split(/\s+/).reverse(),
+      word,
+      line = [],
+      lineNumber = 0,
+      lineHeight = 1.1, // ems
+      x = text.attr("x"),
+      y = text.attr("y"),
+      dy = 1.1,
+      tspan = text.text(null).append("tspan").attr("x", x).attr("y", y).attr("dy", dy + "em");
+    while (word = words.pop()) {
+      line.push(word);
+      tspan.text(line.join(" "));
+      if (tspan.node().getComputedTextLength() > width) {
+        line.pop();
+        tspan.text(line.join(" "));
+        line = [word];
+        tspan = text.append("tspan").attr("x", x).attr("y", y).attr("dy", ++lineNumber * lineHeight + dy + "em").text(word);
+      }
+    }
+  });
+}
+        </script>
+          
+          
+      </svg>
+     
+       
+       
+       
+   </body>
+</html>

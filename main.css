@@ -1,0 +1,23 @@
+#info {
+	position: absolute;
+	top: 10px;
+	width: 100%;
+	text-align: center;
+	z-index: 100;
+	display:block;
+    color:white;
+}
+
+#container {
+  height: 780px;
+/*  width: 800px;*/
+  border: 1px solid red;
+/*  background-color: #c0c0c0; */
+}
+
+
+.embossText  {
+background: #bababa;
+text-shadow: #e0e0e0 1px 1px 0;
+    font-variant: small-caps;
+}
